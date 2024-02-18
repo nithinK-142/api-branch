@@ -1,16 +1,24 @@
 import express, { json, Request, Response } from "express";
+import cors from "cors";
 import { handleFaviconRequest } from "./middleware/handleFaviconRequest";
 import axios from "axios";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET"],
+  })
+);
+
 app.use(json());
 
 app.use(handleFaviconRequest);
 
 app.get("/:repo?/:owner?", async (req: Request, res: Response) => {
-  const { owner, repo } = req.params;
+  const { repo, owner } = req.params;
 
   const selectedOwner = owner || "nithinK-142";
   const selectedRepo = repo || "nithin.me";
