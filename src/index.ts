@@ -9,11 +9,7 @@ app.use(json());
 
 app.use(handleFaviconRequest);
 
-app.get("/", (_req: Request, res: Response) => {
-  res.status(200).send("api-branch");
-});
-
-app.get("/branches/:owner?/:repo?", async (req: Request, res: Response) => {
+app.get("/:repo?/:owner?", async (req: Request, res: Response) => {
   const { owner, repo } = req.params;
 
   const selectedOwner = owner || "nithinK-142";
