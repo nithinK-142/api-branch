@@ -47,10 +47,10 @@ app.get("/:repo?/:owner?", async (req: Request, res: Response) => {
         )}-git-${branch.replace(/\//g, "-")}-nithink-142.vercel.app`,
       }));
 
-      return res.json({ branchesWithLinks });
+      return res.json(branchesWithLinks);
     }
 
-    return res.json({ branches });
+    return res.json(branches);
   } catch (error: any) {
     console.error(error.message);
     return res.status(500).json({ error: "Check username or branchname..." });
