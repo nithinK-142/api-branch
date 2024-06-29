@@ -1,18 +1,13 @@
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
-import { handleFaviconRequest } from "./middleware/handleFaviconRequest";
+import { handleFaviconRequest } from "./middleware/favicon.middleware";
 import { BranchRouter } from "./routes";
 
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET"],
-  })
-);
+app.use(cors({ origin: "*", methods: ["GET"] }));
 
 app.use(express.json());
 app.use(handleFaviconRequest);
