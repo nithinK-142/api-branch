@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { apiBranch } from "../controller/branch.controller";
+import { getRepoLinks } from "../controller/repoLinks.controller";
 
 const router = Router();
 
-router.get("/api", apiBranch);
+router.get("/api/v1", getRepoLinks);
 
 export { router as BranchRouter };

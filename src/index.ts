@@ -14,6 +14,6 @@ app.use(handleFaviconRequest);
 
 app.use(BranchRouter);
 
-app.listen(port, () => console.log("SERVER STARTED"));
+app.listen(port, () => console.log(`⚙️ Server is Up and Running at ${port}`));
 
 export default app;
