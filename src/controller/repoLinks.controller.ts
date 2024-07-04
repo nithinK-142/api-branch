@@ -83,7 +83,9 @@ async function fetchVercelBranches(
         url: deployment.meta.branchAlias.replace(cleanUrlRegex, ""),
       }));
 
-    console.log(`Processed ${vercelBranches.length} valid deployments`);
+    console.log(
+      `Processed ${vercelBranches.length} valid deployments of ${repo}`
+    );
 
     return [...new Set(vercelBranches.map((item) => JSON.stringify(item)))].map(
       (item) => JSON.parse(item)
