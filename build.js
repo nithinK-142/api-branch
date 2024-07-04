@@ -27,3 +27,5 @@ build({
   platform: "neutral", // for ESM
   format: "esm",
 });
+
+console.log("🔥Build finished.");
