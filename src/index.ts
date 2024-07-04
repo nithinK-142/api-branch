@@ -10,8 +10,8 @@ const port = process.env.PORT || 3001;
 app.use(cors({ origin: "*", methods: ["GET"] }));
 
 app.use(express.json());
-app.use(handleFaviconRequest);
 
+app.use(handleFaviconRequest);
 app.use(BranchRouter);
 
 app.listen(port, () => console.log(`⚙️ Server is Up and Running at ${port}`));
