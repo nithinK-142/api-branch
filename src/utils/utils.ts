@@ -36,6 +36,7 @@ export const getProjectId = (repo: string) => {
     "vue-guide": process.env.VUE_GUIDE_PROJECTID,
     "svelte-guide": process.env.SVELTE_GUIDE_PROJECTID,
     "node-guide": process.env.NODE_GUIDE_PROJECTID,
+    "angular-guide": process.env.ANGULAR_GUIDE_PROJECTID,
     "nithin.me": process.env.NITHIN_ME_PROJECTID,
   };
 
